@@ -1,7 +1,5 @@
 package app.products;
 
-import app.products.Tshirt;
-
 public class TshirtRed extends Tshirt {
     @Override
     public float price() {

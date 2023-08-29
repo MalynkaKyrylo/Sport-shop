@@ -1,7 +1,5 @@
 package app.products;
 
-import app.products.Cap;
-
 public class CapWhite extends Cap {
     @Override
     public float price() {
