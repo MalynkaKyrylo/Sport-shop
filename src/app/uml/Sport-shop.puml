@@ -1,0 +1,61 @@
+@startuml
+class app.orders.OrderBuilder {
++ Order prepareOrderA()
++ Order prepareOrderB()
+}
+abstract class app.products.Tshirt {
++ Producer producer()
+}
+class app.products.TshirtBlue {
++ float price()
++ String name()
+}
+class app.producers.ActiveSports {
++ String brandName()
+}
+class app.producers.SmartCaps {
++ String brandName()
+}
+class app.products.TshirtRed {
++ float price()
++ String name()
+}
+interface app.products.Item {
+~ String name()
+~ Producer producer()
+~ float price()
+}
+class app.orders.Order {
+~ List<Item> items
++ void addItem(Item)
++ float getCost()
++ void showItems()
+}
+interface app.producers.Producer {
+~ String brandName()
+}
+class app.products.CapBlack {
++ float price()
++ String name()
+}
+class app.Main {
++ {static} void main(String[])
+}
+abstract class app.products.Cap {
++ Producer producer()
+}
+class app.products.CapWhite {
++ float price()
++ String name()
+}
+
+
+app.products.Item <|.. app.products.Tshirt
+app.products.Tshirt <|-- app.products.TshirtBlue
+app.producers.Producer <|.. app.producers.ActiveSports
+app.producers.Producer <|.. app.producers.SmartCaps
+app.products.Tshirt <|-- app.products.TshirtRed
+app.products.Cap <|-- app.products.CapBlack
+app.products.Item <|.. app.products.Cap
+app.products.Cap <|-- app.products.CapWhite
+@enduml
